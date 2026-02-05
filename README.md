@@ -3,7 +3,6 @@ Description---
 This is a java project developed for a programming assignment. The system is build to manage equipment, lab equipment and furniture.It also let staff members to register, assign equipment plus returned too, and gather report.It illustrates java and object- oriented programming concept.
 
 
-
 Features--
 
 Adding new equipment items
@@ -71,5 +70,6 @@ Using loops (for, while, do-while, enhanced for)
 Managing data using ArrayList and arrays
 
 Building a menu-driven console application
+
 
 
