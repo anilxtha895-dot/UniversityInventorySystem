@@ -14,6 +14,7 @@ public class UniversityInventorySystem {
 
 		Scanner sc = new Scanner(System.in);
 
+		// Main storage lists (system database)
 		ArrayList<InventoryItem> inventory = new ArrayList<>();
 		ArrayList<StaffMember> staffList = new ArrayList<>();
 
@@ -34,8 +35,8 @@ public class UniversityInventorySystem {
 			System.out.print("Enter choice: ");
 
 			while (!sc.hasNextInt()) {
-				System.out.println("Please enter a number.");
-				sc.next();
+			    System.out.println("Please enter a number.");
+			    sc.next();
 			}
 			int warranty = sc.nextInt();
 			sc.nextLine();
@@ -44,6 +45,7 @@ public class UniversityInventorySystem {
 				switch (choice) {
 
 				case 1:
+					// Add equipment (simple)
 					System.out.print("Asset ID: ");
 					String assetId = sc.nextLine();
 
@@ -66,6 +68,7 @@ public class UniversityInventorySystem {
 					break;
 
 				case 2:
+					// Add staff
 					System.out.print("Staff ID: ");
 					int staffId = sc.nextInt();
 					sc.nextLine();
@@ -84,6 +87,7 @@ public class UniversityInventorySystem {
 					break;
 
 				case 3:
+					// Assign equipment
 					System.out.print("Enter Staff ID: ");
 					int sid = sc.nextInt();
 					sc.nextLine();
@@ -96,6 +100,7 @@ public class UniversityInventorySystem {
 					break;
 
 				case 4:
+					// Return equipment
 					System.out.print("Enter Staff ID: ");
 					int rsid = sc.nextInt();
 					sc.nextLine();
@@ -108,6 +113,7 @@ public class UniversityInventorySystem {
 					break;
 
 				case 5:
+					// Search inventory
 					System.out.print("Search by name: ");
 					String criteria = sc.nextLine();
 					manager.searchEquipment(criteria);

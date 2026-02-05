@@ -14,23 +14,28 @@ public class InventoryManager {
     private final ArrayList<InventoryItem> inventory;
     private final ArrayList<StaffMember> staffList;
 
-    // constructor 
+    // constructor (receive the same lists from main)
     public InventoryManager(ArrayList<InventoryItem> inventory, ArrayList<StaffMember> staffList) {
         this.inventory = inventory;
         this.staffList = staffList;
     }
 
-
+    // =========================================================
+    // Task 4 - assignEquipment (ID-based, for your MENU)
+    // =========================================================
     public void assignEquipment(int staffId, String assetId)
             throws StaffMemberNotFoundException, EquipmentNotAvailableException, AssignmentLimitExceededException {
 
         StaffMember staff = findStaffById(staffId);
         Equipment equipment = findEquipmentByAssetId(assetId);
 
+        // delegate to the REQUIRED signature method
         assignEquipment(staff, equipment);
     }
 
-
+    // =========================================================
+    // Task 4 - REQUIRED SIGNATURE (StaffMember, Equipment)
+    // =========================================================
     public void assignEquipment(StaffMember staff, Equipment equipment)
             throws EquipmentNotAvailableException, AssignmentLimitExceededException {
 
@@ -40,16 +45,20 @@ public class InventoryManager {
         equipment.setAvailable(false);
     }
 
-
+    // =========================================================
+    // Task 4 - returnEquipment (ID-based, for your MENU)
+    // =========================================================
     public void returnEquipment(int staffId, String assetId) throws StaffMemberNotFoundException {
 
         StaffMember staff = findStaffById(staffId);
 
-
+        // delegate to the REQUIRED signature method
         returnEquipment(staff, assetId);
     }
 
-
+    // =========================================================
+    // Task 4 - REQUIRED SIGNATURE (StaffMember, String assetId)
+    // =========================================================
     public void returnEquipment(StaffMember staff, String assetId) {
 
         boolean removed = staff.removeAssignedEquipment(assetId);
@@ -65,7 +74,9 @@ public class InventoryManager {
         }
     }
 
-
+    // =========================================================
+    // Task 4 - searchEquipment overload #1 (name)
+    // =========================================================
     public void searchEquipment(String name) {
         System.out.println("Search results:");
 
@@ -79,6 +90,10 @@ public class InventoryManager {
         }
     }
 
+    // =========================================================
+    // Task 4 - searchEquipment overload #2 (category, availableOnly)
+    // category here uses item.getItemType() e.g. "Equipment", "Furniture", "LabEquipment"
+    // =========================================================
     public void searchEquipment(String category, boolean availableOnly) {
         System.out.println("Search results:");
 
@@ -95,7 +110,9 @@ public class InventoryManager {
         }
     }
 
-
+    // =========================================================
+    // Task 4 - searchEquipment overload #3 (warranty range)
+    // =========================================================
     public void searchEquipment(int minWarranty, int maxWarranty) {
         System.out.println("Search results:");
 
@@ -113,6 +130,9 @@ public class InventoryManager {
         }
     }
 
+    // =========================================================
+    // Task 4 - validateAssignment (NESTED if–else REQUIRED)
+    // =========================================================
     public void validateAssignment(StaffMember staff, Equipment equipment)
             throws EquipmentNotAvailableException, AssignmentLimitExceededException {
 
@@ -137,7 +157,9 @@ public class InventoryManager {
         }
     }
 
-
+    // =========================================================
+    // Task 4 - calculateMaintenanceFee (IF / SWITCH REQUIRED)
+    // =========================================================
     public double calculateMaintenanceFee(Equipment equipment, int daysOverdue) {
 
         double fee;
@@ -153,6 +175,9 @@ public class InventoryManager {
         return fee;
     }
 
+    // =========================================================
+    // helper methods
+    // =========================================================
     private StaffMember findStaffById(int staffId) throws StaffMemberNotFoundException {
         for (int i = 0; i < staffList.size(); i++) {
             if (staffList.get(i).getStaffId() == staffId) {
