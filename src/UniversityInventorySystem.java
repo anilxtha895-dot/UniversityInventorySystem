@@ -21,7 +21,7 @@ public class UniversityInventorySystem {
 		InventoryManager manager = new InventoryManager(inventory, staffList);
 		InventoryReports reports = new InventoryReports(inventory, staffList);
 
-		int choice;
+		int choice = -1;
 
 		do {
 			System.out.println("\n===== UNIVERSITY INVENTORY SYSTEM =====");
@@ -59,10 +59,10 @@ public class UniversityInventorySystem {
 					String category = sc.nextLine();
 
 					System.out.print("Warranty months: ");
-					int warranty = sc.nextInt();
+					int warrantyMonths = sc.nextInt();
 					sc.nextLine();
 
-					Equipment eq = new Equipment("EQ" + assetId, name, true, assetId, brand, warranty, category);
+					Equipment eq = new Equipment("EQ" + assetId, name, true, assetId, brand, warrantyMonths, category);
 					inventory.add(eq);
 					System.out.println("Equipment added.");
 					break;

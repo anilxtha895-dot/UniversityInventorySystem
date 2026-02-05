@@ -86,7 +86,7 @@ public class StaffMember {
 	@Override
 	public String toString() {
 		return "StaffMember{staffId=" + staffId +
-				", name='" + name + ''' +
+				", name='" + name + '\'' +
 				", email='" + email + '\'' +
 				", department='" + department + '\'' +
 				", assignedCount=" + assignedCount + '}';
