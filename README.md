@@ -6,17 +6,17 @@ This is a java project developed for a programming assignment. The system is bui
 
 Features--
 
-Add new equipment items
+Adding new equipment items
 
 Register new staff members
 
-Assign equipment to staff
+Assigning equipment to staff
 
-Return equipment
+Adding Returned equipment
 
-Search inventory items
+Searching inventory items
 
-Generate reports
+Generating reports
 
 
 
@@ -71,4 +71,5 @@ Using loops (for, while, do-while, enhanced for)
 Managing data using ArrayList and arrays
 
 Building a menu-driven console application
+
 
